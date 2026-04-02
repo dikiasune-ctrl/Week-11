@@ -15,8 +15,8 @@ import seaborn as sns
 
 @st.cache_data
 def load_data():
-    transactions = pd.read_csv('transactions.csv', parse_dates=['date'])
-    categories   = pd.read_csv('categories.csv')
+    transactions = pd.read_csv('data/transactions.csv', parse_dates=['date'])
+    categories   = pd.read_csv('data/categories.csv')
 
     #Join category names — same left join pattern from Week 8.
     df = pd.merge(transactions, categories, on='category_id', how='left')
